@@ -10,6 +10,7 @@ brew 'gnu-sed'
 brew 'gnu-tar'
 brew 'grep'
 #
+brew 'xz'
 brew 'gzip'
 brew 'p7zip'
 brew 'git-lfs'
