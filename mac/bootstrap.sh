@@ -24,7 +24,7 @@ if test ! -f "$SSH_DONE_FILE"
 then
   print_title Prepare SSH ...
 
-  rm -rf "$SSH_DIR"
+  #rm -rf "$SSH_DIR"
   mkdir -p "$SSH_DIR"
   chmod 700 "$SSH_DIR"
   cp "$MAC_DIR"/ssh/* "$SSH_DIR"/
@@ -41,7 +41,7 @@ if test ! -f "$GITHUB_DONE_FILE"
 then
   print_title Prepare GitHub source directroy ...
 
-  rm -rf "$GITHUB_SRC_DIR"
+  #rm -rf "$GITHUB_SRC_DIR"
   mkdir -p "$GITHUB_SRC_DIR"
   touch "$GITHUB_DONE_FILE"
 
