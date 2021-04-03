@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 set -e
 
@@ -11,10 +11,12 @@ print_message() {
 }
 
 print_title Update Homebrew and packages ...
-brew upgrade
+brew upgrade -v
 print_message "Done\n"
 
 print_title Update zplug packages ...
+export ZPLUG_HOME=/usr/local/opt/zplug
+. $ZPLUG_HOME/init.zsh
 LANG=en_US.UTF-8 zplug update
 print_message "Done\n"
 
