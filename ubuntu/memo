@@ -1,0 +1,33 @@
+# normal app
+- jetbrains-toolbox
+https://www.jetbrains.com/ja-jp/toolbox-app/
+- chrome
+https://www.google.co.jp/chrome/
+- gitkraken
+https://www.gitkraken.com/
+- balenaetcher
+https://www.balena.io/etcher/
+- ulauncher
+https://ulauncher.io/#Download
+- postman
+https://www.postman.com/downloads/
+- slack
+https://slack.com/intl/ja-jp/downloads/linux
+- zoom
+https://zoom.us/download#client_4meeting
+
+# chrome app
+- google-chat
+- line
+
+# desktop entry
+- postman.desktop
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Postman
+Comment=Supercharge your API workflow
+Icon=/home/weiyuanpan/Desktop/Postman/app/resources/app/assets/icon.png
+Exec="/home/weiyuanpan/Desktop/Postman/Postman"
+Terminal=false
+
