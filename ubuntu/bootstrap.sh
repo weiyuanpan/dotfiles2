@@ -58,7 +58,8 @@ then
   sudo apt-get install --no-install-recommends git make gcc build-essential \
     libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl \
     llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
-    liblzma-dev python-is-python3 vim
+    liblzma-dev python-is-python3 vim network-manager-l2tp network-manager-l2tp-gnome \
+    neofetch gnome-tweaks vlc gimp wireshark fcitx fcitx-mozc fcitx-googlepinyin wmctrl
   touch "$UTILS_DONE_FILE"
 
   print_message "Done\n"
@@ -134,6 +135,40 @@ then
   curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
   sudo apt update && sudo apt install 1password
   touch "$ONE_PASS_BETA_DONE_FILE"
+
+  print_message "Done\n"
+fi
+
+# install sublime
+SUBLIME_DONE_FILE=$DONE_DIR/sublime.done
+if test ! -f "$SUBLIME_DONE_FILE"
+then
+  print_title Install Sublime ...
+
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  sudo apt-get install apt-transport-https
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  sudo apt-get update
+  sudo apt-get install sublime-text
+  touch "$SUBLIME_DONE_FILE"
+
+  print_message "Done\n"
+fi
+
+# install docker
+DOCKER_DONE_FILE=$DONE_DIR/docker.done
+DOCKER_COMPOSE_VERSION=1.29.1
+if test ! -f "$DOCKER_DONE_FILE"
+then
+  print_title Install Docker ...
+
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+  rm get-docker.sh
+  sudo usermod -aG docker $USERNAME
+  sudo curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+  touch "$DOCKER_DONE_FILE"
 
   print_message "Done\n"
 fi
