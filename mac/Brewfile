@@ -25,6 +25,7 @@ brew 'zplug'
 brew 'nvm'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'repo'
 #
 cask 'jetbrains-toolbox'
 cask 'google-drive'
