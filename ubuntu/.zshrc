@@ -108,7 +108,7 @@ export LS_COLORS="di=34;40:ln=36;40:so=35;40:pi=33;40:ex=32;40:bd=1;33;40:cd=1;3
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # tmuxinator
-export TMUXINATOR_CONFIG="/Users/weiyuanpan/Library/Mobile Documents/com~apple~CloudDocs/fromdropbox/config/tmuxinator"
+#export TMUXINATOR_CONFIG="/Users/weiyuanpan/Library/Mobile Documents/com~apple~CloudDocs/fromdropbox/config/tmuxinator"
 alias mux="tmuxinator"
 
 # gnu bin
