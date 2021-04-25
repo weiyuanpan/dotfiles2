@@ -120,6 +120,24 @@ then
   print_message "Done\n"
 fi
 
+# install 1password-beta for linux
+ONE_PASS_BETA_DONE_FILE=$DONE_DIR/1password-beta.done
+if test ! -f "$ONE_PASS_BETA_DONE_FILE"
+then
+  print_title Install 1password-beta for linux ...
+
+  curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo apt-key add -
+  echo 'deb [arch=amd64] https://downloads.1password.com/linux/debian/amd64 beta main' | sudo tee /etc/apt/sources.list.d/1password-beta.list
+  sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+  curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+  sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+  curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+  sudo apt update && sudo apt install 1password
+  touch "$ONE_PASS_BETA_DONE_FILE"
+
+  print_message "Done\n"
+fi
+
 # install oh-my-zsh
 OH_MY_ZSH_DONE_FILE=$DONE_DIR/oh-my-zsh.done
 if test ! -f "$OH_MY_ZSH_DONE_FILE"
