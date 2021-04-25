@@ -58,7 +58,7 @@ then
   sudo apt-get install --no-install-recommends git make gcc build-essential \
     libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl \
     llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
-    liblzma-dev
+    liblzma-dev python-is-python3 vim
   touch "$UTILS_DONE_FILE"
 
   print_message "Done\n"
