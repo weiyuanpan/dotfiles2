@@ -14,8 +14,8 @@ DONE_DIR=$HOME/.done
 mkdir -p "$DONE_DIR"
 USERNAME=weiyuanpan
 #USERNAME=$(id -un)
-MAC_DIR="$(cd "$(dirname "$0")"; pwd -P)" # absolute path
-#MAC_DIR=$(dirname "$0")
+PLATFORM_DIR="$(cd "$(dirname "$0")"; pwd -P)" # absolute path
+#PLATFORM_DIR=$(dirname "$0")
 
 # ssh preparation
 SSH_DIR="$HOME"/.ssh
@@ -27,7 +27,7 @@ then
   #rm -rf "$SSH_DIR"
   mkdir -p "$SSH_DIR"
   chmod 700 "$SSH_DIR"
-  cp "$MAC_DIR"/ssh/* "$SSH_DIR"/
+  cp "$PLATFORM_DIR"/ssh/* "$SSH_DIR"/
   #chmod 600 "$SSH_DIR"/*
   touch "$SSH_DONE_FILE"
 
@@ -67,7 +67,7 @@ if test ! -f "$BREWFILE_DONE_FILE"
 then
   print_title Install applications in Brewfile ...
 
-  cd "$MAC_DIR"
+  cd "$PLATFORM_DIR"
   brew bundle -v
   cd -
   touch "$BREWFILE_DONE_FILE"
@@ -94,7 +94,7 @@ then
   print_title Prepare .zshrc ...
 
   test -f "$HOME"/.zshrc && mv "$HOME"/.zshrc "$HOME"/.zshrc.old
-  cp -a "$MAC_DIR"/.zshrc "$HOME"/.zshrc
+  cp -a "$PLATFORM_DIR"/.zshrc "$HOME"/.zshrc
   touch "$ZSHRC_DONE_FILE"
 
   print_message "Done\n"
@@ -122,10 +122,13 @@ if test ! -f "$TMUX_CONF_DONE_FILE"
 then
   print_title Install tmux config ...
 
-  cd "$MAC_DIR"
+  cd "$PLATFORM_DIR"
   ./tmux/install.sh
   cd -
   touch "$TMUX_CONF_DONE_FILE"
 
   print_message "Done\n"
 fi
+
+print_message "Some other installations are available\n"
+print_message "e.g. ~/.dotfiles/python/install.sh, ~/.dotfiles/node/install.sh ...\n"
