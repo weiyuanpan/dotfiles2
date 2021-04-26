@@ -59,8 +59,8 @@ then
     libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl \
     llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
     liblzma-dev python-is-python3 vim network-manager-l2tp network-manager-l2tp-gnome \
-    neofetch gnome-tweaks vlc gimp wireshark fcitx fcitx-mozc fcitx-googlepinyin wmctrl \
-    xdg-utils xclip
+    neofetch gnome-tweaks vlc gimp wireshark fcitx fcitx-config-gtk fcitx-module-dbus \
+    fcitx-mozc fcitx-googlepinyin wmctrl xdg-utils xclip
   touch "$UTILS_DONE_FILE"
 
   print_message "Done\n"
