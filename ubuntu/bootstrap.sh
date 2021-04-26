@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -223,6 +223,21 @@ then
   cd -
   touch "$TMUX_CONF_DONE_FILE"
 
+  print_message "Done\n"
+fi
+
+# install tmux config
+MOUSE_WHEEL_DONE_FILE=$DONE_DIR/mouse-wheel.done
+if test ! -f "$MOUSE_WHEEL_DONE_FILE"
+then
+  print_title Install mouse wheel ...
+
+  sudo apt update
+  sudo apt-get install imwheel
+  bash <(curl -s http://www.nicknorton.net/mousewheel.sh)
+  touch "$MOUSE_WHEEL_DONE_FILE"
+
+  print_message "Add imwheel to startup applications"
   print_message "Done\n"
 fi
 
