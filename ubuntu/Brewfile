@@ -26,6 +26,8 @@ brew 'nvm'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'repo'
+brew 'htop'
+brew 'ncdu'
 #
 #cask 'jetbrains-toolbox'
 #cask 'google-drive'
