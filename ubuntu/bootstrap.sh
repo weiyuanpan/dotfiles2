@@ -60,7 +60,8 @@ then
     llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
     liblzma-dev python-is-python3 vim network-manager-l2tp network-manager-l2tp-gnome \
     neofetch gnome-tweaks vlc gimp wireshark fcitx fcitx-config-gtk fcitx-module-dbus \
-    fcitx-mozc fcitx-googlepinyin wmctrl xdg-utils xclip
+    fcitx-mozc fcitx-googlepinyin wmctrl xdg-utils xclip \
+		network-manager-openvpn-gnome openvpn-systemd-resolved
   touch "$UTILS_DONE_FILE"
 
   print_message "Done\n"
