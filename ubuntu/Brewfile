@@ -28,7 +28,6 @@ brew 'pyenv-virtualenv'
 brew 'repo'
 brew 'htop'
 brew 'ncdu'
-brew 'qemu'
 #
 #cask 'jetbrains-toolbox'
 #cask 'google-drive'
