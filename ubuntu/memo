@@ -1,4 +1,12 @@
+echo 'source $HOME/.zprofile' >> $HOME/.profile
+
+# cat into .zprofile
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 # normal app
+- 1password
 - jetbrains-toolbox
 https://www.jetbrains.com/ja-jp/toolbox-app/
 - chrome
