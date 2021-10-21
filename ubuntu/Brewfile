@@ -28,6 +28,8 @@ brew 'pyenv-virtualenv'
 brew 'repo'
 brew 'htop'
 brew 'ncdu'
+brew 'mkcert'
+brew 'nss'
 #
 #cask 'jetbrains-toolbox'
 #cask 'google-drive'

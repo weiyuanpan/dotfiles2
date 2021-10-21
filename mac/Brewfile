@@ -30,6 +30,8 @@ brew 'htop'
 brew 'ncdu'
 brew 'qemu'
 brew 'wget'
+brew 'mkcert'
+brew 'nss'
 #
 cask 'jetbrains-toolbox'
 cask 'google-drive'
