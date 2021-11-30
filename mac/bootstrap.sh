@@ -130,5 +130,21 @@ then
   print_message "Done\n"
 fi
 
+# install hammerspoon spoons
+SPOONS_DONE_FILE=$DONE_DIR/spoons.done
+if test ! -f "$SPOONS_DONE_FILE"
+then
+  print_title Install hammerspoon spoons ...
+
+  ln -sf "$PLATFORM_DIR/hammerspoon" "$HOME/.hammerspoon" 
+
+  cd "$PLATFORM_DIR"
+  ./hammerspoon/install.sh
+  cd -
+  touch "$SPOONS_DONE_FILE"
+
+  print_message "Done\n"
+fi
+
 print_message "Some other installations are available\n"
 print_message "e.g. ~/.dotfiles/python/install.sh, ~/.dotfiles/node/install.sh ...\n"
