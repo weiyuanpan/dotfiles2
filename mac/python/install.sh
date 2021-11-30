@@ -11,3 +11,11 @@ pyenv global system
 pyenv virtualenv 3.7.6 PcwlAPI-openwrt-v2
 pyenv virtualenv 3.5.4 PcwlAPI-bhclinux-v1
 pyenv versions
+
+cat <<'EOF'>> $HOME/.zprofile
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+EOF
+
