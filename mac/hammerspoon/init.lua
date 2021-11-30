@@ -25,3 +25,12 @@ spoon.ShiftIt:bindHotkeys({
   resizeOut = {{  'alt', 'cmd' }, '=' },
   resizeIn = {{  'alt', 'cmd' }, '-' }
 })
+
+local VimMode = hs.loadSpoon('VimMode')
+local vim = VimMode:new()
+
+vim
+  :disableForApp('Code')
+  :disableForApp('MacVim')
+  :disableForApp('zoom.us')
+  :enterWithSequence('jk')
