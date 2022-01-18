@@ -32,6 +32,7 @@ brew 'qemu'
 brew 'wget'
 brew 'mkcert'
 brew 'nss'
+brew 'ansible'
 #
 cask 'jetbrains-toolbox'
 cask 'google-drive'
