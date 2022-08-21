@@ -33,6 +33,7 @@ brew 'wget'
 brew 'mkcert'
 brew 'nss'
 brew 'ansible'
+brew 'watchman'
 #
 cask 'jetbrains-toolbox'
 cask 'google-drive'
