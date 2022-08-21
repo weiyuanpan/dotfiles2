@@ -136,6 +136,7 @@ if test ! -f "$SPOONS_DONE_FILE"
 then
   print_title Install hammerspoon spoons ...
 
+  rm -f "$HOME/.hammerspoon"
   ln -sf "$PLATFORM_DIR/hammerspoon" "$HOME/.hammerspoon" 
 
   cd "$PLATFORM_DIR"
