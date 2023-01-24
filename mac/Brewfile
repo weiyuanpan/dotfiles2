@@ -12,6 +12,7 @@ brew 'grep'
 #
 brew 'xz'
 brew 'gzip'
+brew 'pigz'
 brew 'p7zip'
 brew 'git-lfs'
 #brew 'openssl'
