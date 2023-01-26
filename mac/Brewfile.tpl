@@ -61,3 +61,9 @@ cask 'zoom'
 cask 'wechat'
 cask 'hammerspoon'
 cask 'karabiner-elements'
+cask 'grammarly'
+cask 'teamviewer'
+
+# install manually
+# - line
+# - blackmagic disk speed test
