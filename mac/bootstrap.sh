@@ -67,10 +67,14 @@ if test ! -f "$BREWFILE_DONE_FILE"
 then
   print_title Install applications in Brewfile ...
 
-  cd "$PLATFORM_DIR"
-  brew bundle -v
-  cd -
-  touch "$BREWFILE_DONE_FILE"
+  if [ -f "Brewfile" ]; then
+      cd "$PLATFORM_DIR"
+      brew bundle -v
+      cd -
+      touch "$BREWFILE_DONE_FILE"
+  else
+      print_message "Brewfile not found"
+  fi
 
   print_message "Done\n"
 fi
@@ -94,7 +98,8 @@ then
   print_title Prepare .zshrc ...
 
   test -f "$HOME"/.zshrc && mv "$HOME"/.zshrc "$HOME"/.zshrc.old
-  cp -a "$PLATFORM_DIR"/.zshrc "$HOME"/.zshrc
+  ln -s -a "$PLATFORM_DIR"/.zshrc "$HOME"/.zshrc
+#  cp -a "$PLATFORM_DIR"/.zshrc "$HOME"/.zshrc
   touch "$ZSHRC_DONE_FILE"
 
   print_message "Done\n"
@@ -137,7 +142,7 @@ then
   print_title Install hammerspoon spoons ...
 
   rm -f "$HOME/.hammerspoon"
-  ln -sf "$PLATFORM_DIR/hammerspoon" "$HOME/.hammerspoon" 
+  ln -sf "$PLATFORM_DIR/hammerspoon" "$HOME/.hammerspoon"
 
   cd "$PLATFORM_DIR"
   ./hammerspoon/install.sh
