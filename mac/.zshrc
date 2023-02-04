@@ -111,6 +111,9 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 export TMUXINATOR_CONFIG="/Users/weiyuanpan/Library/Mobile Documents/com~apple~CloudDocs/utils/config/tmuxinator"
 alias mux="tmuxinator"
 
+# for old iMac
+export HOMEBREW_PREFIX=${HOMEBREW_PREFIX-/usr/local}
+
 # gnu bin
 PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
