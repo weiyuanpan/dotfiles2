@@ -203,3 +203,14 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 if [[ -x ~/.dotfiles/mac/tmux/tmuxx ]]; then
     ~/.dotfiles/mac/tmux/tmuxx
 fi
+
+complete -C "$HOMEBREW_PREFIX/bin/aws_completer" aws
+
+# docker completion
+if [ -f /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion ]; then
+  source /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion
+fi
+# docker-compose completion
+if [ -f /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion ]; then
+  source /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion
+fi
