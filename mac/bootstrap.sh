@@ -170,5 +170,8 @@ then
   print_message "Done\n"
 fi
 
+print_message "Please create a link from this project root path to $HOME/.dotfiles\n"
+print_message "e.g. ln -sf <project_root> $HOME/.dotfiles\n"
+
 print_message "Some other installations are available\n"
 print_message "e.g. ~/.dotfiles/python/install.sh, ~/.dotfiles/node/install.sh ...\n"
