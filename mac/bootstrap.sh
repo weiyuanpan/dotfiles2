@@ -55,6 +55,10 @@ then
   print_title Install Homebrew ...
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo >> "$HOME"/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME"/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
   brew --version
   touch "$HOMEBREW_DONE_FILE"
 
@@ -149,6 +153,19 @@ then
   ./hammerspoon/install.sh
   cd -
   touch "$SPOONS_DONE_FILE"
+
+  print_message "Done\n"
+fi
+
+# link common scripts directory
+COMMON_SCRIPTS_DONE_FILE=$DONE_DIR/common-scripts.done
+if test ! -f "$COMMON_SCRIPTS_DONE_FILE"
+then
+  print_title Link common scripts directory ...
+
+  rm -f "$HOME/scripts"
+  ln -sf "$PLATFORM_DIR/scripts" "$HOME/scripts"
+  touch "$COMMON_SCRIPTS_DONE_FILE"
 
   print_message "Done\n"
 fi
