@@ -1,10 +1,4 @@
-.idea/.gitignore
-.idea/dotfiles2.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/inspectionProfiles/profiles_settings.xml
-
 Brewfile.lock.json
 Brewfile
 mac/hammerspoon/Spoons/VimMode.spoon
+.idea
