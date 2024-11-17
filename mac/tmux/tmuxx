@@ -4,7 +4,17 @@
 source ~/.dotfiles/mac/tmux/utilities || exit 1
 
 # tmux_automatically_attach attachs tmux session automatically
-is_ssh_running && exit 0
+is_ssh_running && {
+    if tmux has-session -t "remote_misc" &>/dev/null; then
+        tmux attach -t "remote_misc"
+        echo "$(tmux -V) attached session"
+        exit 0
+    else
+        tmux new-session -s "remote_misc" -n zsh
+        echo "tmux created new session"
+        exit 0
+    fi
+}
 
 if is_screen_or_tmux_running; then
     if is_tmux_runnning; then
