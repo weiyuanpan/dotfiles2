@@ -16,9 +16,14 @@ sudo route add 13.200.41.128/25 -interface $iface
 echo "> Add routes for PicoManager Manager sites"
 dig +short manager.picomanager.net | \
 grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
-xargs -r -i sudo route add "{}" -interface $iface
+xargs -r -I{} sudo route add "{}" -interface $iface
 
 echo "> Add routes for PicoManager Servers"
 sudo route add 13.112.228.30 -interface $iface
 sudo route add 54.95.123.169 -interface $iface
 sudo route add 3.112.203.41 -interface $iface
+
+echo "> Add routes for PicoManager Portal DB"
+dig +short portaldb.c6wlblq4eqnx.ap-northeast-1.rds.amazonaws.com | \
+grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
+xargs -r -I{} sudo route add "{}" -interface $iface
