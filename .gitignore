@@ -2,3 +2,4 @@ Brewfile.lock.json
 Brewfile
 mac/hammerspoon/Spoons/VimMode.spoon
 .idea
+backup_zsh_history

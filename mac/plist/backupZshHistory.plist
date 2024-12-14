@@ -1,0 +1,17 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>daily_backup_zsh_history</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/weiyuanpan/scripts/backup_zsh_history</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>3600</integer>
+    <key>StandardOutPath</key>
+    <string>/tmp/daily_backup_zsh_history.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/daily_backup_zsh_history.err</string>
+</dict>
+</plist>
