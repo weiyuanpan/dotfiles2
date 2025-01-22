@@ -17,6 +17,9 @@ echo "> Add routes for PicoManager Manager sites"
 dig +short manager.picomanager.net | \
 grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
 xargs -r -I{} sudo route add "{}" -interface $iface
+dig +short manager-dev.picomanager.net | \
+grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
+xargs -r -I{} sudo route add "{}" -interface $iface
 
 echo "> Add routes for PicoManager Servers"
 sudo route add 13.112.228.30 -interface $iface
