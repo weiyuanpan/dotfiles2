@@ -29,6 +29,8 @@ else
             exit 1
         fi
         if tmux has-session &>/dev/null; then
+            # ensure there is no stdin unexpected input
+            read -t 0.1 -n 10 discard
             # detached session exists
             tmux list-sessions | perl -pe 's/(^.*?):/\033[31m$1:\033[m/'
             printf "tmux: attach? (y/N num/session-name) "
