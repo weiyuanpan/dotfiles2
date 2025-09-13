@@ -20,6 +20,10 @@ xargs -r -I{} sudo route add "{}" -interface $iface
 dig +short manager-dev.picomanager.net | \
 grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
 xargs -r -I{} sudo route add "{}" -interface $iface
+dig +short unit-dev.picomanager.net | \
+grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
+xargs -r -I{} sudo route add "{}" -interface $iface
+
 
 echo "> Add routes for PicoManager Servers"
 sudo route add 13.112.228.30 -interface $iface
@@ -30,3 +34,7 @@ echo "> Add routes for PicoManager Portal DB"
 dig +short portaldb.c6wlblq4eqnx.ap-northeast-1.rds.amazonaws.com | \
 grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
 xargs -r -I{} sudo route add "{}" -interface $iface
+
+
+echo "> Add routes for temp servers"
+sudo route add 52.197.181.58 -interface $iface
